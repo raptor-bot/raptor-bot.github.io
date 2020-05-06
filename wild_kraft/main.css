@@ -19,3 +19,10 @@ h2{
 h3{
   font-family: serif;
 }
+
+img {
+  width: 100px;
+  height: auto;
+  border: solid lightgreen 5px;
+  border-radius: 10px;
+}
