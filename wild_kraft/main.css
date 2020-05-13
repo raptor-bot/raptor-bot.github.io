@@ -15,7 +15,7 @@ font-family: cursive;
 h2{
   font-family: monospace;:
 }
-
+buttonLink
 h3{
   font-family: serif;
 }
@@ -25,4 +25,23 @@ img {
   height: auto;
   border: solid lightgreen 5px;
   border-radius: 10px;
+}
+
+/*  Below, this is a class and we put a period to say that.*/
+.buttonLink {
+background-color: lightgreen;
+text-decoration: none;
+padding: 13px;
+border-radius: 13px;
+border: solid purple 3px;
+color: purple;
+font-family: serif;
+}
+/* This is a hover effect. It can be added to anything.*/
+.buttonLink:hover {
+  background-color: pink;
+  color: red;
+transition: 0.5s;
+  font-size: 18px;
+
 }
