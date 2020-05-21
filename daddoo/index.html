@@ -1,40 +1,182 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Daddoo's Website</title>
-    <link rel="stylesheet" href="main.css">
-  </head>
+  <!DOCTYPE html>
+  <html lang="en" dir="ltr">
 
-  <body>
+    <head>
+      <meta charset="utf-8">
+      <title>Daddoo's Website</title>
+      <link rel="stylesheet" href="main.css">
+    </head>
 
-    <h1>My Website of Stuff That You Must Like To Be Boring Like Me, no wait...</h1>
-    <p>Welcome, be Orange, be Happy.</p>
-    <h2>My Favourite Things</h2>
+    <body>
 
-    <h3>Guitars:</h3>
-    <p>Everybody loves Rock & Roll, right? I'm glad you agree.</p>
+      <h1>Welcome, my Name is Chives...</h1>
 
-<img src="img/Kirk2010.jpg" alt="Kirk Hammett from Metallica performing live in Mexio in 2010"></img>
+      <p>
+        What shall we do now?
+      </p>
 
-    <ol>
-      <li>Shredder Guitars (these are the best because they are loud and noisy)</li>
-      <li>Bluesy Guitars (also awesome because Jimi)</li>
-      <li>Classical Guitars</li>
-      <li>Banjos (wait, whut??)</li>
-    </ol>
+      <input type="button" id="messageButton" value="Introductions">
 
-    <h3>Monster Trucks:</h3>
-    <p>Don't spend hours looking for a parking spot. Just park wherever you want! Bwahahahaha!!</p>
+      <input type="button" id="messageButton2" value="Quiz">
 
-<img src="img/raptor.jpg" alt="Blue Ford Raptor climbing rocks"></img>
+      <input type="button" id="messageButton3" value="FavColour Deux">
 
-    <ul>
-      <li>Ford Raptors (these are the best because dinosaurs are real Monsters)</li>
-      <li>Everything else (not as good, obviously)</li>
-    </ul>
+      <input type="button" id="messageButton4" value="Pet Chooser">
 
-    <a href="https://en.wikipedia.org/wiki/Heavy_metal_guitar" target="_blank">Heavy Metal Guitar on Wikipedia</a>
+<script>
 
-  </body>
-</html>
+var userName;
+var favColour;
+var guessesLeft;
+var level;
+
+// INTROS
+
+document.getElementById("messageButton").onclick = testCode;
+
+function testCode() {
+
+  if (userName === undefined || userName === "Mystery Person") {
+
+    userName = prompt("What is your name?");
+    alert("Hello " + userName + ", what class do you have right now?");
+    var session = prompt("Your class:", "English");
+    alert("OK, " + userName + ", have fun in " + session + "!");
+
+    alert(userName + ", what is your favourite colour?")
+    favColour = prompt("Favourite colour:", "Orange");
+    alert("OK, I will remember that " + favColour + " is your bestest most favourite colour. By the way, I like " + favColour + ", too. :)");
+  } else {
+    alert("Hey there, " + userName + ", I think we've already met. If you want to change your favourite colour, try FavColour Deux. If you want tto change your name, close this browser and re-start me from JS Fiddle!")
+  }
+
+}
+
+// GUESSING GAME
+
+document.getElementById("messageButton2").onclick = testCode2;
+
+function testCode2() {
+
+  if (userName === undefined) {
+    userName = "Mystery Person";
+  } else {
+    userName = userName;
+  }
+
+  guessesLeft = 3;
+
+  for (var i = 0; i <= 3; i++) {
+
+    if (guessesLeft > 0) {
+
+      var x = prompt(userName + ", what does a dog wag? (one word, all lowercase)");
+      if (x === "tail") {
+        level = "Smarty Pants";
+        alert("Correct! You sure are a smarty. Your level: " + level);
+        break;
+      } else {
+        guessesLeft--;
+        alert("Nope. Guesses left: " + guessesLeft);
+      }
+    } else {
+      level = "Beginner"
+      alert("Oh no, you have run out of guesses! Try again later. Level: " + level);
+    }
+  }
+
+}
+
+// FAV COLOUR REDUX
+
+document.getElementById("messageButton3").onclick = testCode3;
+
+function testCode3() {
+
+  if (userName === undefined) {
+    userName = "Mystery Person";
+  } else {
+    userName = userName;
+  }
+
+  if (favColour !== undefined) {
+    var confirmColour = prompt("Hey " + userName + ", I forgot - what is your favourite colour again?");
+    if (confirmColour === favColour) {
+      alert("Oh yeah, now I remember. Of course, " + favColour + " is awesome!");
+    } else if (confirmColour !== favColour) {
+      alert("I don't think that is what you said before, but OK, I guess " + confirmColour + " is your new favourite colour. I will try to remember this time.");
+      favColour = confirmColour;
+    }
+
+    alert("Hey, " + userName + " ...");
+    alert("Have a " + favColour + " box of Smarties. On me! :)");
+  } else if (favColour === undefined) {
+    alert("Hmm, " + userName + ", I don't know enough about you yet. Let's complete introductions and then come back to FavColour Deux.")
+  }
+}
+
+// PET CHOOSER
+
+document.getElementById("messageButton4").onclick = testCode4;
+
+function testCode4() {
+
+  if (userName === undefined) {
+    // these statements execute
+    userName = "Mystery Person";
+  } else {
+    // these statements do not execute
+    userName = userName;
+  }
+
+
+  alert("OK, " + userName + ", let's find out what kind of pet you should get...");
+
+  var animals = ["dog", "hamster", "cat"];
+  var habits = ["barking", "running on treadmill", "sleeping"];
+
+  var preference = prompt("Do you want 1-" + habits[0] + ", 2-" + habits[1] + ", or 3-" + habits[2] + "? Enter number only:");
+
+  if (preference === "1") {
+    alert("You should get a " + animals[0] + ".");
+    var pet = animals[0];
+  } else if (preference === "2") {
+    alert("You should get a " + animals[1] + ".");
+    var pet = animals[1];
+  } else {
+    alert("You should get a " + animals[2] + ".");
+    var pet = animals[2];
+  }
+
+  alert("Let's replace the hamster because mama doesn't like it.");
+  animals.splice(1, 1);
+  habits.splice(1, 1);
+
+  alert("OK now we only have " + animals[0] + " and " + animals[1] + ".");
+
+  var addedPet = prompt("What pet should we add?");
+  animals.push(addedPet);
+  var addedPetHabit = prompt("What habit does a " + animals[2] + " have?");
+  habits.push(addedPetHabit);
+
+  alert("Epic! Okay, let's play again.");
+
+  var preference = prompt("Do you want 1-" + habits[0] + ", 2-" + habits[1] + ", or 3-" + habits[2] + "? Enter number only:");
+
+  if (preference === "1") {
+    alert("You should get a " + animals[0] + ".");
+    var pet = animals[0];
+  } else if (preference === "2") {
+    alert("You should get a " + animals[1] + ".");
+    var pet = animals[1];
+  } else {
+    alert("You should get a " + animals[2] + ".");
+    var pet = animals[2];
+  }
+}
+
+</script>
+
+    </body>
+
+  </html>
