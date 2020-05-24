@@ -22,6 +22,8 @@
       <input type="button" id="messageButton3" value="FavColour Deux">
 
       <input type="button" id="messageButton4" value="Pet Chooser">
+      
+      <input type="button" id="messageButton5" value="Wrestler Alias">
 
 <script>
 
@@ -174,6 +176,45 @@ function testCode4() {
     var pet = animals[2];
   }
 }
+
+// SPY NAME GENERATOR
+
+document.getElementById("messageButton5").onclick = testCode5;
+
+function testCode5() {
+
+  if (userName === undefined) {
+    userName = "Mystery Person";
+  } else {
+    userName = userName;
+  }
+
+  alert("OK, " + userName + ", let's give you a wrestler alias.")
+
+  var wrestlerFirstNames = [];
+  var verb1 = prompt("Give me a verb (i.e. Running):");
+  wrestlerFirstNames.push(verb1);
+  var verb2 = prompt("Give me a second verb:");
+  wrestlerFirstNames.push(verb2);
+
+  var wrestlerLastNames = [];
+  var animal1 = prompt("OK, now give me an animal (i.e. Panda):");
+  wrestlerLastNames.push(animal1);
+  var animal2 = prompt("Give me another animal:");
+  wrestlerLastNames.push(animal2);
+
+  var wrestlerFullNames = [];
+  k = 0;
+  for (var i = 0; i < wrestlerFirstNames.length; i++) {
+    for (var j = 0; j < wrestlerLastNames.length; j++) {
+      wrestlerFullNames.push(wrestlerFirstNames[i] + " " + wrestlerLastNames[j]);
+      k++;
+    }
+  }
+  alert("Ok, here are your wrestling aliases: " + wrestlerFullNames[0] + ", " + wrestlerFullNames[1] + ", " + wrestlerFullNames[2] + ", " + wrestlerFullNames[3]);
+
+}
+
 
 </script>
 
