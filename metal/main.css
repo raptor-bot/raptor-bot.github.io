@@ -1,0 +1,112 @@
+
+
+body {
+  background: url(img/sayagata-400px.png) repeat;
+/* background-color: orange; */
+  font-size: 18px;
+  font-family: 'Walter Turncoat', cursive;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 50px;
+}
+
+#mainDiv {
+background-color: rgba(235, 119, 52, 0.4);
+margin: 50px;
+padding-left: 30px;
+padding-right: 30px;
+padding-top: 30px;
+padding-bottom: 30px;
+border: solid black 1px;
+cursor: url('cursor.cur'), default;
+
+}
+
+h1 {
+  font-size: 50px;
+  font-family: 'Metal Mania', cursive;
+  text-align: center;
+}
+
+h2 {
+  font-size: 40px;
+  font-family: 'Metal Mania', cursive;
+}
+
+img {
+    width: 250px;
+    height: auto;
+    border: 15px black solid;
+    border-radius: 200px;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 80px;
+}
+
+/* This is a class.
+This will style a custom button. */
+.buttonLink {
+  background-color: gray;
+  text-decoration: none;
+  padding: 15px;
+  border-radius: 15px;
+  border: solid red 3px;
+  color: lightblue; /* This changes the color of text */
+  font-family: fantasy;
+}
+
+/* This is a hover effect */
+.buttonLink:hover {
+  background-color: red;
+  border: dashed black 3px;
+  border-width: thick;
+  padding: 20px;
+  transition: 0.5s;
+  font-size: 20px;
+}
+
+/* My Custom Navigation CSS */
+
+#mainNav {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-style: solid;
+  border-color: black;
+  border-bottom: solid 15px;
+}
+
+#mainNav ul {
+  list-style-type: none;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+#mainNav ul li {
+  display: inline;
+  padding-right: 30px;
+}
+
+#mainNav ul li a {
+  text-decoration: none;
+  color: black;
+  font-family: 'Metal Mania', cursive;
+  font-size: 35px;
+  font-weight:bolder;
+}
+
+#mainNav ul li a:hover {
+  color: red;
+}
+
+/* Positioning Content */
+
+.floatLeft {
+  float: left;
+  margin-right: 60px;
+  margin-bottom: 40px;
+}
+
+.floatClear {
+  clear: left;
+}
