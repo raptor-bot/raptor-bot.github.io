@@ -27,13 +27,13 @@
 
 <script>
 
+// GLOBAL VARIABLES
 var userName;
 var favColour;
 var guessesLeft;
 var level;
 
-// INTROS
-
+// INTRODUCTIONS
 document.getElementById("messageButton").onclick = testCode;
 
 function testCode() {
@@ -46,16 +46,16 @@ function testCode() {
     alert("OK, " + userName + ", have fun in " + session + "!");
 
     alert(userName + ", what is your favourite colour?")
-    favColour = prompt("Favourite colour:", "Orange");
+    favColour = prompt("Favourite colour:", "orange");
+    favColour = favColour.toLowerCase();
     alert("OK, I will remember that " + favColour + " is your bestest most favourite colour. By the way, I like " + favColour + ", too. :)");
   } else {
-    alert("Hey there, " + userName + ", I think we've already met. If you want to change your favourite colour, try FavColour Deux. If you want tto change your name, close this browser and re-start me from JS Fiddle!")
+    alert("Hey there, " + userName + ", I think we've already met. If you want to change your favourite colour, try playing FavColour Deux. If you want to change your name, try refreshing the page and playing Introductions again!");
   }
 
 }
 
-// GUESSING GAME
-
+// QUIZ
 document.getElementById("messageButton2").onclick = testCode2;
 
 function testCode2() {
@@ -72,7 +72,8 @@ function testCode2() {
 
     if (guessesLeft > 0) {
 
-      var x = prompt(userName + ", what does a dog wag? (one word, all lowercase)");
+      var x = prompt(userName + ", what does a dog wag? (one word)");
+      x = x.toLowerCase();
       if (x === "tail") {
         level = "Smarty Pants";
         alert("Correct! You sure are a smarty. Your level: " + level);
@@ -89,8 +90,7 @@ function testCode2() {
 
 }
 
-// FAV COLOUR REDUX
-
+// FAVCOLOUR DEUX
 document.getElementById("messageButton3").onclick = testCode3;
 
 function testCode3() {
@@ -103,6 +103,7 @@ function testCode3() {
 
   if (favColour !== undefined) {
     var confirmColour = prompt("Hey " + userName + ", I forgot - what is your favourite colour again?");
+    confirmColour = confirmColour.toLowerCase();
     if (confirmColour === favColour) {
       alert("Oh yeah, now I remember. Of course, " + favColour + " is awesome!");
     } else if (confirmColour !== favColour) {
@@ -118,7 +119,6 @@ function testCode3() {
 }
 
 // PET CHOOSER
-
 document.getElementById("messageButton4").onclick = testCode4;
 
 function testCode4() {
@@ -177,8 +177,7 @@ function testCode4() {
   }
 }
 
-// SPY NAME GENERATOR
-
+// WRESTLER ALIAS
 document.getElementById("messageButton5").onclick = testCode5;
 
 function testCode5() {
@@ -193,14 +192,36 @@ function testCode5() {
 
   var wrestlerFirstNames = [];
   var verb1 = prompt("Give me a verb (i.e. Running):");
+  verb1Char1 = verb1.slice(0, 1);
+  verb1Rest = verb1.slice(1);
+  verb1Char1 = verb1Char1.toUpperCase();
+  verb1Rest = verb1Rest.toLowerCase();
+  verb1 = verb1Char1 + verb1Rest;
   wrestlerFirstNames.push(verb1);
+  
   var verb2 = prompt("Give me a second verb:");
+  verb2Char1 = verb2.slice(0, 1);
+  verb2Rest = verb2.slice(1);
+  verb2Char1 = verb2Char1.toUpperCase();
+  verb2Rest = verb2Rest.toLowerCase();
+  verb2 = verb2Char1 + verb2Rest;
   wrestlerFirstNames.push(verb2);
 
   var wrestlerLastNames = [];
   var animal1 = prompt("OK, now give me an animal (i.e. Panda):");
+  animal1Char1 = animal1.slice(0, 1);
+  animal1Rest = animal1.slice(1);
+  animal1Char1 = animal1Char1.toUpperCase();
+  animal1Rest = animal1Rest.toLowerCase();
+  animal1 = animal1Char1 + animal1Rest;
   wrestlerLastNames.push(animal1);
+  
   var animal2 = prompt("Give me another animal:");
+  animal2Char1 = animal2.slice(0, 1);
+  animal2Rest = animal2.slice(1);
+  animal2Char1 = animal2Char1.toUpperCase();
+  animal2Rest = animal2Rest.toLowerCase();
+  animal2 = animal2Char1 + animal2Rest;
   wrestlerLastNames.push(animal2);
 
   var wrestlerFullNames = [];
@@ -214,6 +235,13 @@ function testCode5() {
   alert("Ok, here are your wrestling aliases: " + wrestlerFullNames[0] + ", " + wrestlerFullNames[1] + ", " + wrestlerFullNames[2] + ", " + wrestlerFullNames[3]);
 
 }
+
+/*
+
+alert("That's the end, " + name + ". Hurry off to " + session + " class now, or you will be late. Don't worry, I will try to find a cute little " + pet + " for you! See you, Bye!");
+
+alert(prompt("Oops, one last thing: What's rule number one?") + " is always rule #1!");
+*/
 
 
 </script>
